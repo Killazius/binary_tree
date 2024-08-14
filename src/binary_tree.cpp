@@ -31,3 +31,10 @@ void print_tree(tree_el* root) {
     }
 }
 
+tree_el* search_el(tree_el* root, int value) {
+    if (!root) return nullptr;
+    if (root->value == value) return root;
+    else if (root->value > value) return search_el(root->left,value);
+    else return search_el(root->right,value);
+}
+
