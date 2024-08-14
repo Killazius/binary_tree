@@ -16,6 +16,8 @@ tree_el* create_tree_el(int value);
 void insert_into_tree(tree_el* root, tree_el* cur_elem);
 void print_tree(tree_el* root);
 
+tree_el* search_el(tree_el* root, int value);
+
 
 
 
