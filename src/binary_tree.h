@@ -26,4 +26,5 @@ void clear_tree(tree_el* root);
 
 tree_el* find_min(tree_el* root);
 tree_el* find_max(tree_el* root);
+
 #endif //BINARY_TREE_H
