@@ -79,7 +79,6 @@ tree_el* delete_el(tree_el* root, int value) {
             delete root;
             return temp;
         }
-
         tree_el* temp = find_min(root->right);
         root->value = temp->value;
         root->right = delete_el(root->right, temp->value);
