@@ -63,3 +63,26 @@ tree_el* find_max(tree_el* root) {
     }
     return cur_el;
 }
+
+tree_el* delete_el(tree_el* root, int value) {
+    if (root == nullptr) return root;
+    if (value < root->value) root->left = delete_el(root->left, value);
+    else if (value > root->value) root->right = delete_el(root->right, value);
+    else {
+        if (root->left == nullptr) {
+            tree_el* temp = root->right;
+            delete root;
+            return temp;
+        }
+        else if (root->right == nullptr) {
+            tree_el* temp = root->left;
+            delete root;
+            return temp;
+        }
+
+        tree_el* temp = find_min(root->right);
+        root->value = temp->value;
+        root->right = delete_el(root->right, temp->value);
+    }
+    return root;
+}
