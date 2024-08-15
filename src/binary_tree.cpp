@@ -38,3 +38,13 @@ tree_el* search_el(tree_el* root, int value) {
     else return search_el(root->right,value);
 }
 
+void clear_tree(tree_el* root){
+    if(root != nullptr){
+        if(root->left != nullptr)
+            clear_tree(root->left);
+        if(root->right != nullptr)
+            clear_tree(root->right);
+        delete root;
+    }
+}
+
