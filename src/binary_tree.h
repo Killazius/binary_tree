@@ -13,11 +13,17 @@ struct tree_el {
 };
 
 tree_el* create_tree_el(int value);
+
 void insert_into_tree(tree_el* root, tree_el* cur_elem);
+
 void print_tree(tree_el* root);
+
 tree_el* search_el(tree_el* root, int value);
+
 tree_el* delete_el(tree_el* root, int value);
+
 void clear_tree(tree_el* root);
 
-
+tree_el* find_min(tree_el* root);
+tree_el* find_max(tree_el* root);
 #endif //BINARY_TREE_H

@@ -48,3 +48,18 @@ void clear_tree(tree_el* root){
     }
 }
 
+tree_el* find_min(tree_el* root) {
+    tree_el* cur_el = root;
+    while (cur_el && cur_el->left != nullptr) {
+        cur_el = cur_el->left;
+    }
+    return cur_el;
+}
+
+tree_el* find_max(tree_el* root) {
+    tree_el* cur_el = root;
+    while (cur_el && cur_el->right != nullptr) {
+        cur_el = cur_el->right;
+    }
+    return cur_el;
+}
